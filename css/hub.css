@@ -1,0 +1,786 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            color: white;
+            background:
+                radial-gradient(circle at 20% 20%, #1d0086 0%, transparent 35%),
+                radial-gradient(circle at 80% 80%, #512b81 0%, transparent 35%),
+                #080b16;
+            overflow-x: hidden;
+        }
+
+        /* Fundo decorativo */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: #4169e1;
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle:nth-child(2) {
+            width: 350px;
+            height: 350px;
+            background: #9b59b6;
+            right: -120px;
+            bottom: -100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Container principal */
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background: linear-gradient(
+                135deg,
+                #12003059,
+                #007c5371
+            );
+
+            font-size: 32px;
+            font-weight: bold;
+
+            box-shadow: 0 15px 40px rgba(88, 101, 242, 0.35);
+        }
+
+        h1 {
+            font-size: clamp(35px, 6vw, 58px);
+            margin-bottom: 10px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #aebcff
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        header p {
+            color: #a8afc3;
+            font-size: 17px;
+        }
+
+        /* Pesquisa */
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 17px 22px;
+
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+
+            outline: none;
+
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(15px);
+
+            color: white;
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .search-box input::placeholder {
+            color: #858ba0;
+        }
+
+        .search-box input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 25px rgba(102,126,234,0.2);
+        }
+
+        /* Grid dos botões */
+        .hub {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card */
+        .card {
+            position: relative;
+
+            padding: 28px;
+
+            min-height: 180px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+
+            background: rgba(255,255,255,0.055);
+            backdrop-filter: blur(15px);
+
+            text-decoration: none;
+            color: white;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s,
+                border-color 0.3s,
+                box-shadow 0.3s;
+        }
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+            width: 120px;
+            height: 120px;
+
+            background: var(--color);
+
+            border-radius: 50%;
+
+            right: -50px;
+            top: -50px;
+
+            opacity: 0.12;
+            filter: blur(20px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: var(--color);
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #969db2;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            position: absolute;
+            right: 22px;
+            bottom: 20px;
+
+            font-size: 22px;
+
+            color: #737b94;
+
+            transition: 0.3s;
+        }
+
+        .card:hover .arrow {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+
+            color: #666d82;
+            font-size: 13px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 0;
+            }
+
+            .hub {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: 160px;
+            }
+        }
+
+
+        /* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+
+    background: rgba(12, 12, 12, 0.97);
+    border-bottom: 2px solid #02a3888f;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar-container {
+    width: min(1100px, 90%);
+    min-height: 70px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #59b4ff;
+    transform: scale(1.05);
+
+    filter: drop-shadow(
+        0 0 8px rgba(43, 229, 198, 0.4)
+    );
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.navbar-search {
+    position: relative;
+    width: 360px;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search input {
+    width: 100%;
+    height: 42px;
+    padding: 0 50px 0 16px;
+
+    border: 1px solid #444;
+    border-radius: 10px;
+    outline: none;
+
+    background: #1b1b1b;
+    color: white;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.navbar-search input::placeholder {
+    color: #aaa;
+}
+
+.navbar-search input:focus {
+    border-color: #05eecf;
+
+    background: #202020;
+
+    box-shadow: 0 0 12px rgba(229, 43, 58, 0.25);
+}
+
+
+/* =========================
+   BOTÃO DE PESQUISA
+========================= */
+
+.navbar-search button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #19a2a7;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar-search button:hover {
+    background: #044424;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   RESULTADOS DA PESQUISA
+========================= */
+
+.search-results {
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 6px;
+
+    border: 1px solid #3b2023;
+    border-radius: 10px;
+
+    background: rgba(17, 17, 17, 0.98);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+
+    transition: 0.2s;
+    z-index: 2000;
+}
+
+.search-results.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-result {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #eee;
+
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.search-result:hover {
+    background: #105865;
+    color: white;
+}
+
+.no-result {
+    padding: 12px;
+    color: #ccc;
+    font-size: 13px;
+    text-align: center;
+}
+
+      
+/* FUNDO ANIMADO */
+body {
+    position: relative;
+    isolation: isolate;
+    background: #080b16;
+}
+
+/* Camada de luzes pulsantes */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(38, 0, 82, 0.301),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 85% 80%,
+            rgba(0, 104, 69, 0.322),
+            transparent 45%
+        ),
+        #080b16;
+}
+
+.background::before,
+.background::after {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    border-radius: 50%;
+    filter: blur(85px);
+    opacity: 0.45;
+    animation: pulsacao 8s ease-in-out infinite alternate;
+}
+
+.background::before {
+    background: radial-gradient(
+        circle,
+        rgba(0, 19, 185, 0.35),
+        transparent 55%
+    );
+    transform: translate(-15%, -10%);
+}
+
+.background::after {
+    background: radial-gradient(
+        circle,
+        rgba(1, 133, 78, 0.25),
+        transparent 55%
+    );
+    animation-delay: -4s;
+    animation-duration: 11s;
+}
+
+@keyframes pulsacao {
+    0% {
+        transform: translate(-8%, -5%) scale(0.85);
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+
+    100% {
+        transform: translate(8%, 7%) scale(1.15);
+        opacity: 0.35;
+    }
+}
+
+/* Partículas */
+.particle {
+    position: absolute;
+    bottom: -20px;
+    width: var(--size, 4px);
+    height: var(--size, 4px);
+    border-radius: 50%;
+    background: #b9c6ff;
+    box-shadow:
+        0 0 8px rgba(0, 12, 10, 0.9),
+        0 0 18px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: subirParticula var(--duration, 10s) linear infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes subirParticula {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate3d(var(--drift, 30px), -110vh, 0);
+        opacity: 0;
+    }
+}
+
+/* Respeita a preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    .background::before,
+    .background::after,
+    .particle {
+        animation: none;
+    }
+}
+  /* =====================================
+   LÂMPADA DE LAVA PRETA
+===================================== */
+
+.lava {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    /* Funde as bolhas e cria o efeito líquido */
+    filter: blur(12px) contrast(22);
+    opacity: 0.9;
+}
+
+.lava span {
+    position: absolute;
+    display: block;
+
+    width: var(--size, 100px);
+    height: var(--size, 100px);
+
+    left: var(--left, 50%);
+    top: var(--top, 50%);
+
+    border-radius: 50%;
+
+    background: #0007615e;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.425);
+
+    animation:
+        lavaMove var(--duration, 12s)
+        ease-in-out infinite alternate;
+
+    animation-delay: var(--delay, 0s);
+}
+
+/* Bolhas com tamanhos e posições diferentes */
+.lava span:nth-child(1) {
+    --size: 130px;
+    --left: 10%;
+    --top: 20%;
+    --duration: 11s;
+}
+
+.lava span:nth-child(2) {
+    --size: 90px;
+    --left: 25%;
+    --top: 65%;
+    --duration: 14s;
+    --delay: -4s;
+}
+
+.lava span:nth-child(3) {
+    --size: 160px;
+    --left: 45%;
+    --top: 35%;
+    --duration: 16s;
+    --delay: -7s;
+}
+
+.lava span:nth-child(4) {
+    --size: 100px;
+    --left: 70%;
+    --top: 15%;
+    --duration: 12s;
+    --delay: -3s;
+}
+
+.lava span:nth-child(5) {
+    --size: 145px;
+    --left: 85%;
+    --top: 60%;
+    --duration: 15s;
+    --delay: -8s;
+}
+
+.lava span:nth-child(6) {
+    --size: 75px;
+    --left: 55%;
+    --top: 80%;
+    --duration: 10s;
+    --delay: -5s;
+}
+
+.lava span:nth-child(7) {
+    --size: 110px;
+    --left: 35%;
+    --top: 10%;
+    --duration: 13s;
+    --delay: -2s;
+}
+
+.lava span:nth-child(8) {
+    --size: 85px;
+    --left: 75%;
+    --top: 85%;
+    --duration: 17s;
+    --delay: -9s;
+}
+
+/* Movimento orgânico das bolhas */
+@keyframes lavaMove {
+    0% {
+        transform: translate(-30px, 20px) scale(0.8);
+    }
+
+    25% {
+        transform: translate(50px, -45px) scale(1.25);
+    }
+
+    50% {
+        transform: translate(-20px, 60px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(60px, 20px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-45px, -55px) scale(0.85);
+    }
+}
+
+/* Garante que o conteúdo fique acima das bolhas */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Não animar para quem prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .lava span {
+        animation: none;
+    }
+}
+/* ===== PARTÍCULAS FLUTUANTES ===== */
+
+.particulas-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particula {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+
+    width: var(--tamanho);
+    height: var(--tamanho);
+
+    border-radius: 50%;
+    background: #b8ffe9;
+
+    opacity: 0;
+    box-shadow:
+        0 0 6px rgba(0, 255, 190, 0.65),
+        0 0 14px rgba(0, 255, 190, 0.25);
+
+    animation: flutuarParticula var(--tempo) ease-in-out infinite;
+    animation-delay: var(--atraso);
+}
+
+@keyframes flutuarParticula {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.5);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: var(--brilho);
+    }
+
+    50% {
+        transform: translate3d(var(--movimento-x), -45px, 0) scale(1.2);
+        opacity: var(--brilho);
+    }
+
+    80% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translate3d(0, -100px, 0) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Garante que o conteúdo continue clicável */
+.container,
+.navbar {
+    position: relative;
+    z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .particula {
+        animation: none;
+        opacity: 0.4;
+    }
+}
