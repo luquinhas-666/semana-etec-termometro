@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link href="1.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+          <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+   <!-- Pesquisa principal -->
+
+
+<!-- NAVBAR: agora acima dos cards -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-brand" href="#inicio">
+            TERMÔMETRO
+        </a>
+
+        <div class="navbar-search">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar projetos..."
+                autocomplete="off"
+            >
+
+            <button id="searchButton" type="button">
+                🔍
+            </button>
+
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+</nav>
+<h1>aaa</h1>
+
+
+
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+<script>
+
+
+
+        // Sistema de pesquisa
+       const camposPesquisa = [
+    document.getElementById("search"),
+    document.getElementById("searchInput")
+];
+
+const cards = document.querySelectorAll(".card");
+
+function filtrarProjetos(texto) {
+    const termo = texto.trim().toLocaleLowerCase("pt-BR");
+
+    cards.forEach(card => {
+        const conteudo = card.textContent
+            .toLocaleLowerCase("pt-BR");
+
+        card.style.display = conteudo.includes(termo)
+            ? ""
+            : "none";
+    });
+}
+
+camposPesquisa.forEach(campo => {
+    campo.addEventListener("input", function () {
+        filtrarProjetos(this.value);
+
+        // Mantém os campos sincronizados
+        camposPesquisa.forEach(outro => {
+            if (outro !== this) {
+                outro.value = this.value;
+            }
+        });
+    });
+});
+
+document.getElementById("searchButton")
+    .addEventListener("click", () => {
+        filtrarProjetos(
+            document.getElementById("searchInput").value
+        );
+    });
+</script>
+
+
+        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
