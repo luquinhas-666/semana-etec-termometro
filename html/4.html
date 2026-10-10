@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Semana ETEC</title>
+    <link href="4.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-brand" href="/index.html">
+            TERMÔMETRO
+        </a>
+
+        <div class="navbar-search">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar projetos..."
+                autocomplete="off"
+            >
+
+            <button id="searchButton" type="button">
+                🔍
+            </button>
+
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+</nav>
+    <header>
+
+
+        <!-- FUNDO ANIMADO -->
+        <div class="background">
+            <div class="circle"></div>
+            <div class="circle"></div>
+
+            <!-- Partículas -->
+            <div class="particle" style="left: 5%; animation-duration: 12s;"></div>
+            <div class="particle" style="left: 12%; animation-duration: 18s; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 20%; animation-duration: 15s; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 28%; animation-duration: 20s; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 35%; animation-duration: 14s; animation-delay: 7s;"></div>
+            <div class="particle" style="left: 43%; animation-duration: 17s; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 50%; animation-duration: 13s; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 58%; animation-duration: 19s; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 65%; animation-duration: 16s; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 72%; animation-duration: 21s; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 80%; animation-duration: 15s; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 88%; animation-duration: 18s; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 95%; animation-duration: 14s; animation-delay: 3s;"></div>
+        </div>
+ 
+        
+
+        <main class="conteudo">
+
+            <a class="navbar-brand" id="sec">
+                Semana da Etec
+            </a>
+
+            <!-- CARROSSEL -->
+            <section class="carrossel" id="carrossel">
+                <div class="carrossel-trilho" id="carrosselTrilho">
+                    <div class="slide"><img src="imagens/foto1.jpg" alt="Slide 1"></div>
+                    <div class="slide"><img src="imagens/foto2.jpg" alt="Slide 2"></div>
+                    <div class="slide"><img src="imagens/foto3.jpg" alt="Slide 3"></div>
+                </div>
+
+                <button class="carrossel-btn prev" onclick="mudarSlide(-1)" aria-label="Anterior">‹</button>
+                <button class="carrossel-btn next" onclick="mudarSlide(1)" aria-label="Próximo">›</button>
+
+                <div class="carrossel-dots" id="carrosselDots"></div>
+            </section>
+
+            <!-- CAIXA DE TEXTO -->
+            <section class="caixa-texto">
+                <h2>O que é</h2>
+
+                <p>    O evento consiste na consolidação de uma plataforma integrada de difusão científica, tecnológica e cultural, projetada especificamente para realizar a captação, o processamento analítico e a exibição de projetos acadêmicos e inovações concebidas em ambiente educacional em tempo real. A arquitetura da mostra baseia-se na exposição automatizada de variáveis práticas e teóricas através de protótipos de alta precisão conectados a uma unidade de aplicação central, que traduz o conhecimento técnico dos discentes em soluções sociais instantâneas, garantindo uma taxa de atualização contínua e sem latência perceptível para o usuário final.<br><br>    O grande diferencial do projeto reside na sua interface de comunicação comunitária intuitiva, estruturada a partir de mostras científicas, estandes interativos e workshops que atuam como o principal canal de feedback. Em vez de simplesmente fornecer teorias brutas isoladas, o software pedagógico embarcado executa uma rotina lógica interna que converte os conceitos medidos em três faixas operacionais de interpretação rápida, facilitando o diagnóstico visual imediato das competências profissionais locais através de uma categorização pré-programada no sistema.<br><br>    A primeira subdivisão corresponde ao estado de iniciação tecnológica, uma faixa de operação acionada automaticamente sempre que o corpo discente detecta demandas mercadológicas latentes e propõe o desenvolvimento de sistemas rudimentares de controle. Essa classificação indica uma imersão técnica significativa no ambiente e serve como um indicador visual claro de que o espaço acadêmico se encontra sob condições de desenvolvimento acentuado, necessitando de atenção caso haja exigência de estabilização estrutural ou manutenção de um padrão científico.<br><br>     A segunda categoria é definida como o estado de integração multidisciplinar, que compreende o intervalo ideal de equilíbrio e conforto metodológico estabelecido para o funcionamento adequado e sinérgico entre os eixos tecnológicos da instituição. Essa faixa intermediária atua como o indicador de estabilidade do sistema de ensino, confirmando que os índices monitorados permanecem dentro dos parâmetros esperados e seguros, onde não há desvios pedagógicos para extremos e nenhuma intervenção ou correção curricular se faz necessária no momento da leitura.<br><br>     A terceira e última subdivisão representa o estado de empreendedorismo disruptivo, um alerta crítico ativado imediatamente no painel de avaliação quando os valores de inovação capturados pelos projetos ultrapassam o limite superior de segurança estipulado. Essa resposta lógica avisa visualmente sobre o superaquecimento criativo do local, permitindo a identificação imediata de picos de talento excessivo que possam comprometer a integridade do espaço ou das dinâmicas socioeconômicas que ocorrem dentro dele.</p>
+
+            </section>
+
+        </main>
+
+    </header>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function toggleNavbar() {
+            document.getElementById("navbarMenu").classList.toggle("show");
+        }
+
+        function toggleDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        // Fecha o dropdown ao clicar fora dele
+        document.addEventListener("click", function (event) {
+            const dropdown = document.querySelector(".nav-dropdown");
+            const menu = document.getElementById("dropdownMenu");
+            if (dropdown && !dropdown.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+
+        // ===== CARROSSEL =====
+        const trilho = document.getElementById("carrosselTrilho");
+        const dotsBox = document.getElementById("carrosselDots");
+        const carrossel = document.getElementById("carrossel");
+        const totalSlides = trilho.children.length;
+        let slideAtual = 0;
+        let timer;
+
+        // cria as bolinhas
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement("button");
+            dot.setAttribute("aria-label", "Ir para o slide " + (i + 1));
+            dot.onclick = () => irParaSlide(i);
+            dotsBox.appendChild(dot);
+        }
+
+        function irParaSlide(n) {
+            slideAtual = (n + totalSlides) % totalSlides;
+            trilho.style.transform = `translateX(-${slideAtual * 100}%)`;
+            [...dotsBox.children].forEach((d, i) =>
+                d.classList.toggle("ativo", i === slideAtual)
+            );
+            reiniciarTimer();
+        }
+
+        function mudarSlide(direcao) {
+            irParaSlide(slideAtual + direcao);
+        }
+
+        function reiniciarTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => irParaSlide(slideAtual + 1), 4000); // 4 segundos
+        }
+
+        // pausa quando o mouse está em cima
+        carrossel.addEventListener("mouseenter", () => clearInterval(timer));
+        carrossel.addEventListener("mouseleave", reiniciarTimer);
+
+        // arrastar com o dedo no celular
+        let inicioX = 0;
+        carrossel.addEventListener("touchstart", e => inicioX = e.touches[0].clientX);
+        carrossel.addEventListener("touchend", e => {
+            const diff = e.changedTouches[0].clientX - inicioX;
+            if (Math.abs(diff) > 50) mudarSlide(diff < 0 ? 1 : -1);
+        });
+
+        irParaSlide(0);
+    </script>
+</body>
+</html>
