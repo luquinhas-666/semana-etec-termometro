@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- seu CSS vem depois do Bootstrap para ter prioridade -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md" data-bs-theme="dark">
+            <a class="navbar-brand fw-bold" href="#">Projeto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#o-que-e">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section hero bg-animado" id="hero">
+            <div class="orb orb1"></div>
+            <div class="orb orb2"></div>
+            <div class="orb orb3"></div>
+            <div class="left">
+                <article>
+                    <h1>Conheca o nosso projeto!</h1>
+                    <aside>lore ipsium</aside>
+                    <a class="btn-cta" href="#o-que-e">Saiba mais</a>
+                </article>
+            </div>
+            <div>
+                <img src="" alt="">
+            </div>
+        </section>
+
+        <section class="bg-grey section" id="o-que-e">
+            <div class="center">
+                <h1>O que e?</h1>
+            </div>
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <p>aaa</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <p>uuuu</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <p>uuuu</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <p>uuuu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section class="section galeria-section" id="galeria">
+
+    <!-- TÍTULO NA ÁREA MARCADA EM VERMELHO -->
+    <div class="titulo-galeria">
+        <span class="linha-decorativa"></span>
+        <h1> <span>Componentes</span></h1>
+        <p>Explore cada detalhe e descubra mais.</p>
+    </div>
+
+    <div class="container-galeria">
+
+        <div id="carouselProjeto"
+             class="carousel slide carousel-fade"
+             data-bs-ride="carousel"
+             data-bs-interval="5000">
+
+            <!-- INDICADORES -->
+            <div class="carousel-indicators">
+                <button type="button"
+                        data-bs-target="#carouselProjeto"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"></button>
+
+                <button type="button"
+                        data-bs-target="#carouselProjeto"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+
+                <button type="button"
+                        data-bs-target="#carouselProjeto"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+
+                <button type="button"
+                        data-bs-target="#carouselProjeto"
+                        data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+
+                         <button type="button"
+                        data-bs-target="#carouselProjeto"
+                        data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+
+                         <button type="button"
+                        data-bs-target="#carouselProjeto"
+                        data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+            </div>
+
+    
+<!-- SLIDES -->
+<div class="carousel-inner">
+
+    <!-- SLIDE 1 -->
+    <div class="carousel-item active">
+        <div class="slide-conteudo">
+            <div class="slide-imagem">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=85"
+                     alt="Equipe trabalhando em um projeto">
+            </div>
+
+            <div class="texto-slide">
+                <span class="numero-slide">01 / 06</span>
+                <h2>Conheça o projeto</h2>
+                <p>
+                    Nosso projeto nasceu com o objetivo de apresentar
+                    ideias, compartilhar conhecimento e criar novas
+                    possibilidades.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="carousel-item">
+        <div class="slide-conteudo">
+            <div class="slide-imagem">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85"
+                     alt="Planejamento e organização">
+            </div>
+
+            <div class="texto-slide">
+                <span class="numero-slide">02 / 06</span>
+                <h2>Como funciona?</h2>
+                <p>
+                    Apresentamos as etapas, os recursos e as soluções
+                    que fazem parte da nossa proposta. Tudo de forma
+                    clara e organizada.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="carousel-item">
+        <div class="slide-conteudo">
+            <div class="slide-imagem">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85"
+                     alt="Tecnologia e colaboração">
+            </div>
+
+            <div class="texto-slide">
+                <span class="numero-slide">03 / 06</span>
+                <h2>Nossas ideias</h2>
+                <p>
+                    Valorizamos a criatividade, a colaboração e a busca
+                    por alternativas que contribuam para alcançar
+                    nossos objetivos.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="carousel-item">
+        <div class="slide-conteudo">
+            <div class="slide-imagem">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85"
+                     alt="Pessoas trabalhando juntas">
+            </div>
+
+            <div class="texto-slide">
+                <span class="numero-slide">04 / 06</span>
+                <h2>Nosso objetivo</h2>
+                <p>
+                    Queremos transformar ideias em experiências,
+                    compartilhar resultados e continuar evoluindo
+                    com cada nova etapa do projeto.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="carousel-item">
+        <div class="slide-conteudo">
+            <div class="slide-imagem">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85"
+                     alt="Ambiente de trabalho colaborativo">
+            </div>
+
+            <div class="texto-slide">
+                <span class="numero-slide">05 / 06</span>
+                <h2>Trabalho em equipe</h2>
+                <p>
+                    A colaboração e a troca de conhecimentos nos ajudam
+                    a desenvolver novas ideias e construir soluções
+                    cada vez melhores.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="carousel-item">
+        <div class="slide-conteudo">
+            <div class="slide-imagem">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=85"
+                     alt="Equipe planejando novos projetos">
+            </div>
+
+            <div class="texto-slide">
+                <span class="numero-slide">06 / 06</span>
+                <h2>Próximos passos</h2>
+                <p>
+                    Seguimos em busca de novas oportunidades para
+                    aprender, inovar e transformar nossos objetivos
+                    em resultados.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div><!-- FIM carousel-inner -->
+
+
+<!-- BOTÃO ANTERIOR -->
+<button class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselProjeto"
+        data-bs-slide="prev"
+        aria-label="Imagem anterior">
+
+    <span class="carousel-control-prev-icon"
+          aria-hidden="true"></span>
+
+    <span class="visually-hidden">Anterior</span>
+</button>
+
+
+<!-- BOTÃO PRÓXIMO -->
+<button class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselProjeto"
+        data-bs-slide="next"
+        aria-label="Próxima imagem">
+
+    <span class="carousel-control-next-icon"
+          aria-hidden="true"></span>
+
+    <span class="visually-hidden">Próximo</span>
+</button>
+
+</div><!-- FIM carousel slide -->
+
+
+</section>
+    </main>
+
+    <footer class="bg-dark" id="contato">
+        <div class="container text-center">
+            <div class="row gy-4 align-items-center">
+                <div class="col-12 col-md-4">
+                    <strong class="d-block text-white">Projeto</strong>
+                    <small>© 2026 Todos os direitos reservados.</small>
+                </div>
+                <div class="col-12 col-md-4">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#o-que-e">Sobre</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="mailto:contato@example.com">contato@example.com</a>
+                </div>
+            </div>
+        </div>
+         <a class="btn-cta menosss" href="#hero">Saiba menos</a>
+    </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("carouselProjeto");
+
+    if (!carousel) return;
+
+    carousel.addEventListener("slide.bs.carousel", function (event) {
+        const slides = carousel.querySelectorAll(".carousel-item");
+        const slideDestino = slides[event.to];
+
+        if (!slideDestino) return;
+
+        const texto = slideDestino.querySelector(".texto-slide");
+
+        if (texto) {
+            texto.style.animation = "none";
+
+            // Força o navegador a reiniciar a animação.
+            void texto.offsetWidth;
+
+            texto.style.animation = "";
+        }
+    });
+});
+</script>
+</body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
