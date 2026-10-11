@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termômetro</title>
+
+   
+    <link rel="stylesheet" href="3.css">
+
+   
+
+</head>
+
+<body>
+
+   <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+   <!-- Pesquisa principal -->
+
+
+<!-- NAVBAR: agora acima dos cards -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a class="navbar-brand" href="#inicio">
+            TERMÔMETRO
+        </a>
+
+        <div class="navbar-search">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar projetos..."
+                autocomplete="off"
+            >
+
+            <button id="searchButton" type="button">
+                🔍
+            </button>
+
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+</nav>
+
+
+
+    <main>
+        <section class="sec1">
+
+            <div class="sec1-texto">
+                <h1>Quem Somos</h1>
+
+                <p>
+                    Somos os aluno da turma do 1ºE - DS, responsáveis
+                    pelo projeto <br> de termômetro que mede a temperatura
+                    do ambiente, com integração de representação em
+                    LCD e alertas com leds e piezo!
+                </p>
+
+            </div>
+
+            <div class="sec1-imagem">
+                <img src="../imagens/about_us/grupo.JPG" alt="Nossa equipe">
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="sec2">
+
+            <h1 class="formatação-h1">Nossa Equipe</h1>
+
+            <p class="formatação-p">
+            Conheça cada integrante do nosso grupo que nos ajudou a
+            realizar esse projeto, e o que cada um desenvolveu!
+            </p>
+
+            <div class="sec2-box1">
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/ben.jpg">
+                        <h3>Benício</h3>
+                        <p class="sec2-funcao-p">Coordenador do Projeto</p>
+                        <p>Dirigiu o projeto, organizou e designou a função de
+                            cada integrante, analisando o progresso e corrigindo
+                            possíveis erros de programação embarcada, desenvolvimento
+                            de hardware e pesquisa e
+                            conteúdo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/mig1.jpg">
+                        <h3>Miguel "1"</h3>
+                        <p class="sec2-funcao-p">Coordenador do Projeto</p>
+                        <p>Também dirigiu o projeto, organizou e designou a função de
+                            cada integrante, analisando o progresso e corrigindo
+                            possíveis erros de desenvolvimento front-end, design,
+                            e desenvolvimentos gerais.</p>
+                    </div>
+                </div>
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/luc.jpg">
+                        <h3>Luccas</h3>
+                        <p class="sec2-funcao-p">Desenvolvedor Geral</p>
+                        <p>Participou do desenvolvimento de diferentes áreas do projeto,
+                            auxiliando na implementação de funcionalidades, na resolução
+                            de problemas e na integração entre programação embarcada,
+                            desenvolvimento de hardware e demais componentes do sistema.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sec2-box1">
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/mig2.jpg">
+                        <h3>Miguel "2"</h3>
+                        <p class="sec2-funcao-p">Desenvolvedor de Hardware</p>
+                        <p>Realizou a montagem e a conexão dos componentes eletrônicos
+                            do projeto, organizando circuitos, conectando sensores e
+                            verificando o funcionamento dos dispositivos físicos para
+                            garantir a integração adequada entre os componentes.</p>
+                    </div>
+                </div>
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/fab.jpg">
+                        <h3>Fábio</h3>
+                        <p class="sec2-funcao-p">Desenvolvedor de Hardware</p>
+                        <p>Realizou a montagem e a conexão dos componentes eletrônicos
+                            do projeto, organizando circuitos, conectando sensores e
+                            verificando o funcionamento dos dispositivos físicos para
+                            garantir a integração adequada entre os componentes.</p>
+                    </div>
+                </div>
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/pab.jpg">
+                        <h3>Pablo</h3>
+                        <p class="sec2-funcao-p">Programação Embarcada</p>
+                        <p>Desenvolveu e ajustou a programação do Arduino em C++,
+                            implementando comandos para interpretar os dados dos sensores
+                            e controlar as funções do sistema, realizando testes e corrigindo
+                            erros para assegurar o funcionamento esperado do projeto.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sec2-box1">
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/gab.jpg">
+                        <h3>Gabriel</h3>
+                        <p class="sec2-funcao-p">Desenvolvedor Front-end</p>
+                        <p>Desenvolveu a interface visual do site, estruturando as páginas
+                            com HTML, estilizando os elementos com CSS e implementando
+                            interações com JavaScript. Fez a parte de "Motivação do Projeto" no site.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/gui.jpg">
+                        <h3>Giménes</h3>
+                        <p class="sec2-funcao-p">Desenvolvedor Front-end</p>
+                        <p>Desenvolveu a interface visual do site, estruturando as páginas
+                            com HTML, estilizando os elementos com CSS e implementando
+                            interações com JavaScript. Fez a parte de "Objetivo do Projeto" no site.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sec2-box2">
+                    <div class="sec2-membro">
+                        <img src="../imagens/about_us/mur.jpg">
+                        <h3>Murilo</h3>
+                        <p class="sec2-funcao-p">Desenvolvedor Front-end</p>
+                        <p>Desenvolveu a interface visual do site, estruturando as páginas
+                            com HTML, estilizando os elementos com CSS e implementando
+                            interações com JavaScript. Fez a parte de "O'que é o Projeto" no site.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+
+        <hr>
+
+        <section class="sec3">
+            
+            <h1>O que nos representa</h1>
+
+            <p class="formatação-p">
+                Cada integrante contribui de uma forma diferente
+                para tornar nosso grupo mais completo.
+            </p>
+
+            <div class="sec3-box">
+
+                <div class="sec3-card">
+                    <div class="sec3-icone">🤝</div>
+                    <h3>Trabalho em equipe</h3>
+                    <p>
+                        Ajudamos uns aos outros em cada etapa, dividindo os trabalhos difíceis
+                        utilizando o melhor de cada um de nós!
+                    </p>
+                </div>
+
+                <div class="sec3-card">
+                    <div class="sec3-icone">💡</div>
+                    <h3>Criatividade</h3>
+                    <p>
+                        Nos reunimos e ouvimos uns aos outros, para que achássemos soluções para os
+                        problemas, e novas integrações para que o nosso projeto estivesse cada vez
+                        melhor!
+                    </p>
+                </div>
+
+                <div class="sec3-card">
+                    <div class="sec3-icone">🎯</div>
+                    <h3>Comprometimento</h3>
+                    <p>
+                        Cada integrante se dedicou em seu trabalho, de forma focada, afim de que
+                        tivesse excelência em cada parte do código e do projeto físico!
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+
+        <p class="footer">&copy; Página feita por Benício</p>
+
+    </footer>
+ <script>
+
+
+
+        // Sistema de pesquisa
+       const camposPesquisa = [
+    document.getElementById("search"),
+    document.getElementById("searchInput")
+];
+
+const cards = document.querySelectorAll(".card");
+
+function filtrarProjetos(texto) {
+    const termo = texto.trim().toLocaleLowerCase("pt-BR");
+
+    cards.forEach(card => {
+        const conteudo = card.textContent
+            .toLocaleLowerCase("pt-BR");
+
+        card.style.display = conteudo.includes(termo)
+            ? ""
+            : "none";
+    });
+}
+
+camposPesquisa.forEach(campo => {
+    campo.addEventListener("input", function () {
+        filtrarProjetos(this.value);
+
+        // Mantém os campos sincronizados
+        camposPesquisa.forEach(outro => {
+            if (outro !== this) {
+                outro.value = this.value;
+            }
+        });
+    });
+});
+
+document.getElementById("searchButton")
+    .addEventListener("click", () => {
+        filtrarProjetos(
+            document.getElementById("searchInput").value
+        );
+    });
+</script>
+
+
+</body>
+</html>
