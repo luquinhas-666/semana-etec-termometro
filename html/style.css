@@ -1,0 +1,227 @@
+:root {
+  --bg: #f0f6f3; --card: #fff; --text: #14231d; --muted: #5a6e66;
+  --line: #d3e0da; --accent: #1f7a5a; --erro: #d9482b;
+}
+:root { color-scheme: light; }
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --bg: #0e1815; --card: #16241f; --text: #e8f2ee; --muted: #93aaa1;
+  --line: #284038; --accent: #4cc496; --on-accent: #06241a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Outfit", system-ui, sans-serif; }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 100vh; min-height: 100svh;
+  display: grid; place-items: center; text-align: center; color: #fff;
+}
+.camada, #particulas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.camada { z-index: -2; opacity: 0; transition: opacity 1.4s ease; }
+#particulas { z-index: -1; pointer-events: none; }
+body[data-estado="frio"] .frio,
+body[data-estado="ameno"] .ameno,
+body[data-estado="quente"] .quente { opacity: 1; }
+
+/* Frio: azul gelo, bordas congeladas e gelo no rodapé */
+body[data-estado="frio"] {
+  --texto: #0a2f57;
+  --num: linear-gradient(100deg, #0a2f57 35%, #3d9bdc 45%, #fff 50%, #3d9bdc 55%, #0a2f57 65%);
+  --tam: 250% 100%;
+}
+.frio { background: linear-gradient(175deg, #dff4ff 0%, #8fd2f4 40%, #3f86cb 100%); }
+.frio::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(240,250,255,.6) 100%);
+  animation: respirar 6s ease-in-out infinite;
+}
+.frio::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 28%;
+  background: linear-gradient(to top, rgba(255,255,255,.9), rgba(255,255,255,0));
+  clip-path: polygon(0 100%, 0 60%, 6% 30%, 11% 65%, 18% 20%, 25% 70%, 33% 35%, 40% 75%, 48% 15%, 55% 70%, 63% 30%, 70% 68%, 78% 22%, 85% 66%, 92% 38%, 100% 62%, 100% 100%);
+}
+
+/* Quente: laranja com brilho de fogo subindo do chão */
+body[data-estado="quente"] {
+  --num: linear-gradient(180deg, #fff 10%, #ffe08a 55%, #ffb347 100%);
+}
+.quente { background: linear-gradient(180deg, #b5340a 0%, #f06a12 50%, #ffa33a 100%); }
+.quente::after {
+  content: ""; position: absolute; inset: 0; transform-origin: bottom;
+  background: radial-gradient(ellipse at 50% 100%, rgba(255,225,110,.8), transparent 62%);
+  animation: chama 2.4s ease-in-out infinite alternate;
+}
+
+/* Ameno: verde com luz suave se movendo */
+body[data-estado="ameno"] {
+  --num: linear-gradient(180deg, #fff 30%, #d6ffe5 100%);
+}
+.ameno { background: linear-gradient(160deg, #3fbf84 0%, #1f9a68 50%, #0e5a45 100%); }
+.ameno::after {
+  content: ""; position: absolute; inset: -30%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(225,255,205,.45), transparent 40%),
+    radial-gradient(circle at 75% 70%, rgba(120,235,180,.3), transparent 38%);
+  animation: derivar 14s ease-in-out infinite alternate;
+}
+
+/* Texto da hero */
+.conteudo { padding: 24px; animation: entrar 1.2s cubic-bezier(.2,.8,.2,1) both; }
+.temperatura {
+  display: flex; justify-content: center; align-items: flex-start;
+  font-size: clamp(7rem, 34vw, 16rem); font-weight: 600; line-height: .9; letter-spacing: -.04em;
+  text-shadow: 0 4px 30px rgba(0,0,0,.12);
+}
+#valor {
+  color: transparent;
+  background-image: var(--num, linear-gradient(#fff, #fff));
+  background-size: var(--tam, 100% 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.unidade { margin-top: .22em; font-size: .28em; font-weight: 500; letter-spacing: 0; color: var(--texto, #fff); }
+#status {
+  margin: 20px 0 0; font-size: clamp(1.4rem, 4vw, 1.9rem); font-weight: 600;
+  color: var(--texto, #fff); text-shadow: 0 2px 14px rgba(0,0,0,.18);
+}
+
+body[data-estado="frio"] #valor { filter: drop-shadow(0 0 22px rgba(255,255,255,.95)); animation: brilho 5s linear infinite; }
+body[data-estado="quente"] #valor { animation: chama-texto 2.2s ease-in-out infinite alternate; }
+body[data-estado="ameno"] .temperatura { animation: flutuar 6s ease-in-out infinite; }
+
+.rolar {
+  position: absolute; bottom: 72px; left: 50%; translate: -50% 0;
+  display: grid; justify-items: center; gap: 8px;
+  color: var(--texto, #fff); font-weight: 600; text-decoration: none;
+}
+.seta {
+  width: 14px; height: 14px; rotate: 45deg;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  animation: pular 1.6s ease-in-out infinite;
+}
+
+/* ---------- AJUSTES ---------- */
+.ajustes {
+  position: relative; margin-top: -36px; padding: 72px 24px 96px;
+  background: var(--bg); border-radius: 36px 36px 0 0;
+}
+.ajustes > * { max-width: 420px; margin-inline: auto; }
+.ajustes h2 { margin: 0 auto 8px; font-size: 1.8rem; font-weight: 600; }
+.ajustes > p { margin: 0 auto 28px; color: var(--muted); line-height: 1.5; }
+
+form {
+  display: grid; gap: 16px; padding: 24px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(10, 40, 30, .08);
+}
+label { display: grid; gap: 6px; font-size: .95rem; color: var(--muted); }
+input {
+  font: inherit; color: var(--text); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+input:focus-visible, button:focus-visible, .rolar:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+button {
+  font: inherit; font-weight: 600; color: var(--on-accent, #fff); background: var(--accent);
+  border: 0; border-radius: 10px; padding: 14px; cursor: pointer; transition: transform .15s;
+}
+button:active { transform: scale(.98); }
+#erro { margin: 0; min-height: 1.2em; font-size: .9rem; color: var(--erro); }
+
+/* ---------- MODO ESCURO ---------- */
+[data-tema="escuro"] .frio { background: linear-gradient(175deg, #07142b 0%, #0f3260 45%, #1d5b99 100%); }
+[data-tema="escuro"] .frio::before { background: radial-gradient(ellipse at center, transparent 45%, rgba(110,185,240,.3) 100%); }
+[data-tema="escuro"] .frio::after { background: linear-gradient(to top, rgba(190,230,255,.4), rgba(190,230,255,0)); }
+[data-tema="escuro"] body[data-estado="frio"] {
+  --texto: #eaf7ff;
+  --num: linear-gradient(100deg, #eaf7ff 35%, #7cc8f5 45%, #fff 50%, #7cc8f5 55%, #eaf7ff 65%);
+}
+[data-tema="escuro"] .quente { background: linear-gradient(180deg, #170401 0%, #5a1505 50%, #c4430b 100%); }
+[data-tema="escuro"] .ameno { background: linear-gradient(160deg, #081f19 0%, #0f4a37 50%, #1b7a55 100%); }
+body[data-estado="quente"] .rolar { text-shadow: 0 1px 12px rgba(90,20,0,.6); }
+
+/* Botão de tema */
+.tema {
+  position: fixed; top: 16px; right: 16px; z-index: 10;
+  width: 44px; height: 44px; padding: 0; border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--text); background: var(--card); border: 1px solid var(--line);
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+.tema svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tema .sol, [data-tema="escuro"] .tema .lua { display: none; }
+[data-tema="escuro"] .tema .sol { display: block; }
+
+/* ---------- ANIMAÇÕES ---------- */
+@keyframes entrar { from { opacity: 0; transform: translateY(30px) scale(.96); } }
+@keyframes respirar { 50% { opacity: .55; } }
+@keyframes brilho { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@keyframes chama { from { opacity: .6; transform: scaleY(.9); } to { opacity: 1; transform: scaleY(1.08); } }
+@keyframes chama-texto {
+  0%   { filter: drop-shadow(0 0 16px rgba(255,110,0,.7)); }
+  40%  { filter: drop-shadow(0 -4px 34px rgba(255,150,20,.95)); }
+  70%  { filter: drop-shadow(0 0 22px rgba(255,90,0,.8)); }
+  100% { filter: drop-shadow(0 -6px 40px rgba(255,170,40,1)); }
+}
+@keyframes flutuar { 50% { transform: translateY(-10px); } }
+@keyframes derivar { to { transform: translate(8%, 6%) rotate(8deg); } }
+@keyframes pular { 50% { translate: 0 6px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- LIQUID GLASS ---------- */
+:root {
+  --vidro: rgba(8,16,24,.16); --campo: rgba(255,255,255,.1); --entrada: rgba(0,0,0,.18);
+  --botao: rgba(255,255,255,.28); --erro-vidro: #ffe1d8;
+}
+[data-tema="claro"] body[data-estado="frio"] {
+  --vidro: rgba(255,255,255,.2); --campo: rgba(255,255,255,.3); --entrada: rgba(255,255,255,.6);
+  --botao: rgba(255,255,255,.7); --erro-vidro: #b3261e;
+}
+
+/* o fundo animado agora é fixo e continua atrás de tudo ao rolar */
+.fundo { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+
+/* aba que sobe sobre a hero + botão de tema: vidro com blur */
+.tema, .ajustes {
+  background: var(--vidro);
+  -webkit-backdrop-filter: blur(3px) saturate(170%);
+  backdrop-filter: blur(3px) saturate(170%);
+  border: 1px solid rgba(255,255,255,.3);
+  box-shadow: inset 0 1.5px 0 rgba(255,255,255,.6), inset 0 0 22px rgba(255,255,255,.08), 0 18px 50px rgba(0,0,0,.18);
+}
+.ajustes { border-bottom: 0; color: var(--texto, #fff); text-shadow: 0 1px 10px rgba(0,0,0,.16); }
+.ajustes > p { color: inherit; opacity: .88; }
+.tema { color: var(--texto, #fff); transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+.tema:hover { transform: scale(1.12); }
+
+/* cartão do formulário: vidro por cima do vidro */
+.ajustes form {
+  position: relative; background: var(--campo);
+  border: 1px solid rgba(255,255,255,.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 12px 32px rgba(0,0,0,.14);
+}
+.ajustes label { color: inherit; }
+.ajustes input {
+  color: var(--texto, #fff); background: var(--entrada);
+  border: 1px solid rgba(255,255,255,.3); box-shadow: inset 0 2px 6px rgba(0,0,0,.12);
+}
+.ajustes button {
+  color: var(--texto, #fff); background: var(--botao); text-shadow: none;
+  border: 1px solid rgba(255,255,255,.45);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 6px 18px rgba(0,0,0,.14);
+}
+.ajustes button:hover { filter: brightness(1.15); }
+.ajustes #erro { color: var(--erro-vidro); }
+
+/* brilho de borda, como a luz batendo na quina do vidro */
+.tema::before, .ajustes form::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: linear-gradient(140deg, rgba(255,255,255,.95), rgba(255,255,255,0) 32%, rgba(255,255,255,0) 68%, rgba(255,255,255,.55));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
