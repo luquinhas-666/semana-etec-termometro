@@ -45,11 +45,11 @@
       grupo.style.gridColumn = "1 / -1";
       const label = document.createElement("label");
       label.htmlFor = "chave";
-      label.textContent = "Chave da API (para salvar os limites)";
+      label.textContent = "Chave da API";
       label.style.display = "block";
       campoChave = document.createElement("input");
       campoChave.id = "chave";
-      campoChave.placeholder = "Digite a chave configurada no .env";
+      campoChave.placeholder = "Apenas para Devs";
       campoChave.style.width = "100%";
       campoChave.style.boxSizing = "border-box";
       grupo.append(label, campoChave);
