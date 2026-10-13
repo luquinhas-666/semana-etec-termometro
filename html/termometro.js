@@ -3,7 +3,7 @@
   "use strict";
 
 
-  const API_URL = "https://anderson-candles-chart-witnesses.trycloudflare.com";
+  const API_URL = "https://bullet-kingston-justin-charms.trycloudflare.com";
   const INTERVALO_MS = 2000;
   const TIMEOUT_MS = 12000;
 
