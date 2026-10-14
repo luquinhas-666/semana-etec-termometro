@@ -3,7 +3,7 @@
   "use strict";
 
 
-  const API_URL = "https://burn-hearings-alexandria-version.trycloudflare.com";
+  const API_URL = "https://diamond-algorithms-lanka-pittsburgh.trycloudflare.com";
   const INTERVALO_MS = 2000;
   const TIMEOUT_MS = 12000;
 
