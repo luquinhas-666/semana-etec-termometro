@@ -3,7 +3,7 @@
   "use strict";
 
 
-  const API_URL = "https://diamond-algorithms-lanka-pittsburgh.trycloudflare.com";
+  const API_URL = "https://classics-moments-mass-terrorist.trycloudflare.com ";
   const INTERVALO_MS = 2000;
   const TIMEOUT_MS = 12000;
 
