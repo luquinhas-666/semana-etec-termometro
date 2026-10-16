@@ -3,7 +3,7 @@
   "use strict";
 
 
-  const API_URL = "https://appointed-max-ban-warranties.trycloudflare.com";
+  const API_URL = "https://adjustable-prevention-jack-flickr.trycloudflare.com";
   const INTERVALO_MS = 2000;
   const TIMEOUT_MS = 12000;
 
